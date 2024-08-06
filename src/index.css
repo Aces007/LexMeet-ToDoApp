@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap');
+
+
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  --ff-lato: 'Lato', sans-serif;
+  --ff-roboto: 'Roboto Slab', serif;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: var(--ff-lato);
+  background: linear-gradient(90deg, rgba(94,27,137,1) 0%, rgba(244,81,44,1) 100%);
+}
+
+.head-cont{
+  width: 100%;
+  background: linear-gradient(90deg, rgba(94,27,137,1) 0%, rgba(244,81,44,1) 100%);
+  padding: 1.5rem;
+  position: relative;
+}
+
+.head-content{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--ff-roboto);
+}
+
+.head-logo img {
+  width: 75px;
+  height: 75px;
+}
+
+.head-logo{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.addTask {
+  background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
+  color: #f4512c;
+  padding: 0.6rem;
+  width: 50%;
+  border-radius: 10px;
+}
+
+.addTaskBtn {
+  background: #fd7e14;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.4rem;
+  width: 15%;
+  margin-top: 1rem;
+}
+
+.addTaskBtn:hover {
+  background-color: #e06602;
+  font-weight: 700;
+}
+
+.taskBoard {
+  margin-top: 2rem;
+  background-color:rgba(255, 255, 255, 0.9);
+  color: #5E1B89;
+  padding: 1.5rem;
+  border-radius: 10px;
+}
+
+.completeBtn{
+  background-color: #633BAD;
+  padding: 0.2rem;
+}
+
