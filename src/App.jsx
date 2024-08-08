@@ -53,7 +53,7 @@ function App() {
           <div className='d-flex flex-row justify-content-center mt-4 gap-4'>
             <button
               onClick={handleCompleteAll}
-              className='btn btn-success text-white'
+              className='btn text-white completeAll'
             >
               Complete All
             </button>

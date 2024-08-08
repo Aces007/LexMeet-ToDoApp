@@ -97,7 +97,45 @@ body {
 }
 
 .completeBtn{
-  background-color: #633BAD;
+  background-color: #5E1B89;
   padding: 0.2rem;
 }
 
+.editBoard {
+  margin-top: 2rem;
+  background-color:rgba(255, 255, 255, 0.9);
+  color: #818589;
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.saveEdit {
+  background-color: #F4512C;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.4rem;
+  width: 15%;
+  margin-top: 1rem;
+}
+
+.cancelEdit {
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.4rem;
+  margin-top: 1rem;
+}
+
+.editBtn {
+  color: #818589;
+  background-color: rgba(255, 255, 255, 0.9)
+}
+
+.completeAll {
+  background-color: #5E1B89;
+  padding: 0.4rem;
+}
+
+.completeAll:hover {
+  background-color: #9D71BC;
+}

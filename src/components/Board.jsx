@@ -48,17 +48,17 @@ const Board = ({ task, index, taskList, setTaskList }) => {
             type="text"
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
-            className="editTaskInput"
+            className="editBoard"
           />
           <div className="d-flex gap-2 mt-2">
             <button
-              className="bg-success border-2 border-black rounded-3 p-1 w-50"
+              className="border-2 border-black rounded-3 p-1 w-50 saveEdit"
               onClick={handleSaveEdit}
             >
               Save
             </button>
             <button
-              className="bg-secondary border-2 border-black rounded-3 p-1 w-50"
+              className="bg-secondary border-2 border-black rounded-3 p-1 w-50 cancelEdit"
               onClick={handleCancelEdit}
             >
               Cancel
@@ -80,7 +80,7 @@ const Board = ({ task, index, taskList, setTaskList }) => {
             Last Modified: {new Date(task.createdAt).toLocaleString()}
           </p>
           <button
-            className="bg-warning border-2 border-black rounded-3 p-1 my-2 w-75"
+            className="border-2 border-black rounded-3 p-1 my-2 w-75 editBtn"
             onClick={handleEdit}
           >
             Edit
