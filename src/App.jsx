@@ -21,9 +21,13 @@ function App() {
   }, []);
 
   const handleDeleteAll = () => {
-    setTaskList([]);
-    localStorage.removeItem('taskList');
+    const confirmDeleteAll = window.confirm("Are you sure you want to delete all tasks?");
+    if (confirmDeleteAll) {
+      setTaskList([]);
+      localStorage.removeItem('taskList');
+    }
   };
+  
 
   const handleCompleteAll = () => {
     const updatedTaskList = taskList.map(task => ({ ...task, completed: true }));

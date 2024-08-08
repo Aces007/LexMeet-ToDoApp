@@ -3,6 +3,7 @@ import { useState } from "react";
 const Input = ({ taskList, setTaskList }) => {
   const [input, setInput] = useState("");
   const [error, setError] = useState("");
+  
 
   const handleAddTask = (e) => {
     e.preventDefault();
@@ -11,7 +12,13 @@ const Input = ({ taskList, setTaskList }) => {
       return;
     }
 
-    const newTask = { text: input, completed: false };
+    const newTask = { 
+      text: input, 
+      completed: false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString() 
+    };
+
     const updatedTaskList = [...taskList, newTask];
     setTaskList(updatedTaskList);
     localStorage.setItem('taskList', JSON.stringify(updatedTaskList));

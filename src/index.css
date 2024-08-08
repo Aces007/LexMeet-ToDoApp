@@ -36,12 +36,12 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: var(--ff-lato);
-  background: linear-gradient(90deg, rgba(94,27,137,1) 0%, rgba(244,81,44,1) 100%);
+  background: linear-gradient(90deg, rgba(244,81,44,1) 0%, rgba(94,27,137,1) 100%);
 }
 
 .head-cont{
   width: 100%;
-  background: linear-gradient(90deg, rgba(94,27,137,1) 0%, rgba(244,81,44,1) 100%);
+  background: linear-gradient(90deg, rgba(244,81,44,1) 0%, rgba(94,27,137,1) 100%);
   padding: 1.5rem;
   position: relative;
 }
@@ -68,14 +68,14 @@ body {
 
 .addTask {
   background: linear-gradient(90deg, rgba(255,255,255,0.9) 0%, rgba(240,240,240,0.9) 100%);
-  color: #f4512c;
+  color: #818589;
   padding: 0.6rem;
   width: 50%;
   border-radius: 10px;
 }
 
 .addTaskBtn {
-  background: #fd7e14;
+  background: #F4512C;
   color: #fff;
   border-radius: 10px;
   padding: 0.4rem;
@@ -84,7 +84,7 @@ body {
 }
 
 .addTaskBtn:hover {
-  background-color: #e06602;
+  background-color: #FF7F4D;
   font-weight: 700;
 }
 
