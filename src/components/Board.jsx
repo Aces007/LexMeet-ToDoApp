@@ -3,7 +3,7 @@ import { useState } from "react";
 const Board = ({ task, index, taskList, setTaskList }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editText, setEditText] = useState(task.text);
-  
+  const [error, setError] = useState("");
 
   const handleDelete = () => {
     const confirmDelete = window.confirm("Are you sure you want to delete this task?");
@@ -12,7 +12,7 @@ const Board = ({ task, index, taskList, setTaskList }) => {
       setTaskList(updatedTaskList);
       localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
     }
-  }
+  };
 
   const handleComplete = () => {
     const updatedTaskList = taskList.map((t, i) => 
@@ -20,25 +20,31 @@ const Board = ({ task, index, taskList, setTaskList }) => {
     );
     setTaskList(updatedTaskList);
     localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
-  }
+  };
 
   const handleEdit = () => {
     setIsEditing(true);
-  }
+  };
 
   const handleSaveEdit = () => {
+    if (editText.trim() === "") {
+      setError("Task cannot be empty or just spaces.");
+      return;
+    }
     const updatedTaskList = taskList.map((t, i) =>
       i === index ? { ...t, text: editText, updatedAt: new Date().toISOString() } : t
     );
     setTaskList(updatedTaskList);
     localStorage.setItem('taskList', JSON.stringify(updatedTaskList));
     setIsEditing(false);
-  }
+    setError("");
+  };
 
   const handleCancelEdit = () => {
     setEditText(task.text);
     setIsEditing(false);
-  }
+    setError("");
+  };
 
   return (
     <div className="d-flex flex-column align-items-center w-100 taskBoard">
@@ -48,22 +54,23 @@ const Board = ({ task, index, taskList, setTaskList }) => {
             type="text"
             value={editText}
             onChange={(e) => setEditText(e.target.value)}
-            className="editBoard"
+            className="editTaskInput"
           />
           <div className="d-flex gap-2 mt-2">
             <button
-              className="border-2 border-black rounded-3 p-1 w-50 saveEdit"
+              className="bg-success border-2 border-black rounded-3 p-1 w-50"
               onClick={handleSaveEdit}
             >
               Save
             </button>
             <button
-              className="bg-secondary border-2 border-black rounded-3 p-1 w-50 cancelEdit"
+              className="bg-secondary border-2 border-black rounded-3 p-1 w-50"
               onClick={handleCancelEdit}
             >
               Cancel
             </button>
           </div>
+          {error && <p className="text-danger mt-2">{error}</p>}
         </div>
       ) : (
         <>
@@ -77,7 +84,7 @@ const Board = ({ task, index, taskList, setTaskList }) => {
             Created on: {new Date(task.createdAt).toLocaleString()}
           </p>
           <p className="fs-6 text-muted">
-            Last Modified: {new Date(task.createdAt).toLocaleString()}
+            Last modified: {new Date(task.updatedAt).toLocaleString()}
           </p>
           <button
             className="border-2 border-black rounded-3 p-1 my-2 w-75 editBtn"
@@ -92,7 +99,7 @@ const Board = ({ task, index, taskList, setTaskList }) => {
             Delete
           </button>
           <button
-            className={`${task.completed} ? border-2 border-black rounded-3 p-1 w-75 completeBtn`}
+            className={`${task.completed ? 'completed' : ''} border-2 border-black rounded-3 p-1 w-75 completeBtn`}
             onClick={handleComplete}
           >
             {task.completed ? 'Undo' : 'Complete'}
@@ -101,6 +108,6 @@ const Board = ({ task, index, taskList, setTaskList }) => {
       )}
     </div>
   );
-}
+};
 
 export default Board;
